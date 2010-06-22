@@ -1,7 +1,7 @@
 #summary Brief description of library DLL's exports
 #labels Phase-Design,Phase-Implementation
 
-= Common routines =
+= Miscellanous =
   * halloc, hfree - allocate/free from the heap
   * hCheckLeaks - check for memory leaks in halloc/hfree
   * xstrdup - make duplicate for string
@@ -9,6 +9,7 @@
   * xstrreplacechar - replace ch1 with ch2 in a string
   * HashPbCb - calculate hash for symbol name (used in GSI/PSI/SYM)
   * MapExistingFileA/W - ANSI/Unicode versions for MapExistingFile function - easy interface for CreateFile+CreateFileMapping+MapViewOfFile
+  * RtlGetModuleBase - find image base for supplied pointer within image
 
 = MSF exports =
   * MsfOpen - open MSF container
@@ -41,9 +42,6 @@
   * SYMByName - find symbol by name
   * GSIByName - find GSI symbol by name
 
-= Miscellanous =
-  * RtlGetModuleBase - find image base for supplied pointer within image
-
 = Sym engine =
   * SymSetSymbolPath - set path for local symbol cache
   * SymFindLoadedSymbolsForImage - find PDB in local symbol storage for the specified image
@@ -58,3 +56,19 @@
   * SymDownloadFromServerForImage - search PDB for the specified image in symbol server (by unique Signature-Age pair)
   * SymSetPrintfCallout - set address of printf-like function called for printing debug output of Sym engine
   * SymLoadSymbolsforImageFile - automatically search PDB for image supplied (first, look in local symbol store, then look in symbol server)
+
+= PDB exports =
+  * PdbOpen - open PDB (by name)
+  * PdbClose - close PDB
+  * PdbOpenValidate - open PDB if it matches GUID Signature and Age supplied
+  * PdbOpenForImage - open PDB if it matches image supplied
+  * PdbOpenForImageFile - open PDB if it matches image supplied by image file
+  * PdbGetImageSignatureAndPath - get PDB path and GUID signature/Age for the PE image supplied (typically, by image base address)
+  * PdbFindMatchingPdbForImage - find appropriate PDB file for the image supplied
+  * PdbFindMatchingPdbForImageFile - find appropriate PDB file for the image file supplied
+  * PdbGetLastError - get last PDB error
+  * PdbSetLastError - set last PDB error
+  * PdbGetErrorDescription - get string description for the error code supplied
+
+= Temporarily exported internals =
+  * SympFindBestOffsetInMatchingSection - find best matching section in PE image for the specified RVA
