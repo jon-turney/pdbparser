@@ -1,4 +1,5 @@
 #summary Brief description of library DLL's exports
+#labels Phase-Design,Phase-Implementation
 
 = Common routines =
   * halloc, hfree - allocate/free from the heap
@@ -21,7 +22,7 @@
 = TPI exports =
   * TPILoadTypeInfo - load TPI stream from PDB
   * TPILookupTypeRecord - find type record by type id
-  * TPILookupTypeName - find type name (for example, 'struct _KAPC *') by type id
+  * TPILookupTypeName - find type name (for example, 'struct _KAPC **') by type id
   * TPIDumpTypes - generate C header file-style output for TPI dump
   * TPIFreeTypeInfo - free TPI stream loaded by TPILoadTypeInfo
 
