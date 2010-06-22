@@ -18,6 +18,7 @@ MSF header (see MSF_HDR in symeng\msf.cpp) has the following layout:
   * Offset 0x2c, Size DWORD : Root directory size, in bytes.
   * Offset 0x30, Size DWORD : field reserved (not used, ignored)
   * Offset 0x34, Size array of 0x49 DWORDs : Root directory pointers (page numbers containing root directory)
+Total length: 0x158 (344) bytes.
 
 = Root directory =
 Root directory contains array of stream descriptors. Root directory is followed by free page map (complete layout is unknown, ignored).
