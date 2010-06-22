@@ -33,7 +33,7 @@ Stream size array is followed by array of stream pointers (list of page numbers 
 Number of streams in outer array == stream count.
 
 = Stream types =
-Stream#  Description
+{{{Stream#  Description
 0        Root directory (copy)
 1        PDB headers (see PdbHeadersFormat)
 2        TPI (type info) (see TPIFormat)
@@ -41,6 +41,7 @@ Stream#  Description
 5        FPO (frame pointers omission info) (see FPOEntriesFormat)
 variable GSI (global symbol information) (see GSIPSIFormat)
 variable PSI (private symbol information) (see GSIPSIFormat)
+}}}
 
 = Misc =
 Calculate number of pages spanned by size-length bytes: `#define STREAM_SPAN_PAGES(msf,size) (ALIGN_UP(size,msf->hdr->dwPageSize)/msf->hdr->dwPageSize)`
