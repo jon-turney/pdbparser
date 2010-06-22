@@ -32,6 +32,7 @@ Main operations supported:
 = Library files =
   * symeng.dll - dynamically linked library
   * symeng.lib - import library
+  * symengst.lib - static library
   * msf.h - declarations of MSF module exports
   * pdb.h - declarations of PDB module exports
   * dbi.h - declarations of DBI module exports
