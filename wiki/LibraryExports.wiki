@@ -22,8 +22,39 @@
 = TPI exports =
   * TPILoadTypeInfo - load TPI stream from PDB
   * TPILookupTypeRecord - find type record by type id
-  * TPILookupTypeName - find type name (for example, 'struct _KAPC **') by type id
+  * TPILookupTypeName - find type name by type id
   * TPIDumpTypes - generate C header file-style output for TPI dump
   * TPIFreeTypeInfo - free TPI stream loaded by TPILoadTypeInfo
 
 = SYM exports =
+  * SYMLoadSymbols - load symbol information for PDB
+  * SYMUnloadSymbols - unload symbol information for PDB
+  * SYMGetSymFromAddr - get symbol record by symbol's address (RVA, of course)
+  * SYMFreeSymbol - free symbol record retrieved by SYMGetSymFromAddr
+  * SYMDumpSymbols - dump symbol information (for debugging purposes)
+  * SYMNextSym - get next symbol record
+
+= GSI exports =
+  * GSINearestSym - find nearest symbol for supplied RVA
+  * GSIFindExact - find symbol by exact address
+  * GSIEnumAll - enumerate all GSI symbols
+  * SYMByName - find symbol by name
+  * GSIByName - find GSI symbol by name
+
+= Miscellanous =
+  * RtlGetModuleBase - find image base for supplied pointer within image
+
+= Sym engine =
+  * SymSetSymbolPath - set path for local symbol cache
+  * SymFindLoadedSymbolsForImage - find PDB in local symbol storage for the specified image
+  * SymLoadSymbolsForImage - load PDB for image file (compares GUID Signature and Age from IMAGE_DEBUG_DIRECTORY and PDB header)
+  * SymUnloadSymbols - unload all symbols for PDB
+  * SymUnloadAll - ??
+  * SymFromAddress - find symbol record by symbol address
+  * SymFreeSymbol - free symbol record retrieved by SymFromAddress
+  * SymNextSym - get next symbol record
+  * SymDownloadFromServerPdb - download PDB from symbol server (identified by unique GUIDSignature-PDBAge pair)
+  * SymDecompressPdb - decompress CAB-packed PDB file (typically downloaded from symbol server: symbol server keeps all PDBs compressed)
+  * SymDownloadFromServerForImage - search PDB for the specified image in symbol server (by unique Signature-Age pair)
+  * SymSetPrintfCallout - set address of printf-like function called for printing debug output of Sym engine
+  * SymLoadSymbolsforImageFile - automatically search PDB for image supplied (first, look in local symbol store, then look in symbol server)
