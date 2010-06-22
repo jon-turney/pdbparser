@@ -33,7 +33,8 @@ Stream size array is followed by array of stream pointers (list of page numbers 
 Number of streams in outer array == stream count.
 
 = Stream types =
-{{{Stream#  Description
+{{{
+Stream#  Description
 0        Root directory (copy)
 1        PDB headers (see PdbHeadersFormat)
 2        TPI (type info) (see TPIFormat)
