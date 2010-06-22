@@ -1,0 +1,28 @@
+#summary Brief description of library DLL's exports
+
+= Common routines =
+  * halloc, hfree - allocate/free from the heap
+  * hCheckLeaks - check for memory leaks in halloc/hfree
+  * xstrdup - make duplicate for string
+  * xstrstrskip - find occurence of substring in a string and skip substring length
+  * xstrreplacechar - replace ch1 with ch2 in a string
+  * HashPbCb - calculate hash for symbol name (used in GSI/PSI/SYM)
+  * MapExistingFileA/W - ANSI/Unicode versions for MapExistingFile function - easy interface for CreateFile+CreateFileMapping+MapViewOfFile
+
+= MSF exports =
+  * MsfOpen - open MSF container
+  * MsfClose - close MSF container
+  * MsfLoadStream - load stream from MSF file
+  * MsfReferenceStream - load stream + remember its data pointer and content length
+  * MsfSizeOfStream - calculate stream content length. Always a multiple of page size.
+  * MsfDereferenceStream - decrement stream reference count. When refcount reaches zero, stream is unloaded.
+  * MsfGetStreamPointers - read page numbers of stream content. Used internally in MsfLoadStream to load stream pages.
+
+= TPI exports =
+  * TPILoadTypeInfo - load TPI stream from PDB
+  * TPILookupTypeRecord - find type record by type id
+  * TPILookupTypeName - find type name (for example, 'struct _KAPC *') by type id
+  * TPIDumpTypes - generate C header file-style output for TPI dump
+  * TPIFreeTypeInfo - free TPI stream loaded by TPILoadTypeInfo
+
+= SYM exports =
