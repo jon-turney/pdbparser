@@ -8,6 +8,7 @@ PDB stream (for PDB Format v7.0) contains the header with the following fields:
   * Offset 0x04  : `DWORD sig` : time stamp-based old-style signature (not used)
   * Offset 0x08  : `DWORD age` : PDB file age (number of PDB recompilations since PDB was created or completely rebuilt)
   * Offset 0x0c  : `GUID sig70` : GUID signature (new-style). 
+Total length: 0x10 (16) bytes.
 
 Among with Age used as unique PDB identifier in a set of PDB with the same names. Used to distinguish PDBs for different versions of the same file in symbol server and symbol store.
 
