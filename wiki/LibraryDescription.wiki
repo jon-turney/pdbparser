@@ -12,3 +12,19 @@ symeng.dll consists of several modules:
   * 'GSI','PSI' : contains internal GSI/PSI parsing routines. Interface: open [GP]SI for SYM, close [GP]SI, get prev/next symbol, find symbol by name/address.
   * 'TPI' : contains internal TPI parsing routines. Interface: open TPI for DBI, close TPI, enumerate types, find type by ID, dump types in C header file format.
   * 'Misc' : miscallenous internal routines.
+
+= The exported interface functions =
+Main operations supported: 
+  * open/close PDB (by file name)
+  * find PDB for image (by image base address, by image file name)
+  * download PDB for image (by image base address, by image file name)
+  * get PDB signature & age (unique identifier in symbol storage)
+  * enumerate all types in TPI stream (type information) 
+  * enumerate all GSI symbols (Global Symbol Information) 
+  * enumerate all PSI symbols (Private Symbol Information)
+  * enumerate all types and print type information in format of C header file (pdbdump analogue; detection of C-unions pending)
+  * find address of symbol
+  * find symbol by address 
+  * find prev/next symbol 
+  * dump symbol (from GSI/PSI)
+  * dump type (from TPI)
