@@ -1,5 +1,5 @@
 #summary Brief description of library DLL's exports
-#labels Phase-Design,Phase-Implementation
+#labels Phase-Design,Phase-Implementation,Interface
 
 = Miscellanous =
   * halloc, hfree - allocate/free from the heap
