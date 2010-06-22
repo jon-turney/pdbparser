@@ -20,6 +20,12 @@ MSF header (see MSF_HDR in symeng\msf.cpp) has the following layout:
   * Offset 0x34, Size array of 0x49 DWORDs : Root directory pointers (page numbers containing root directory)
 Total length: 0x158 (344) bytes.
 
+= Maximum size of MSF container =
+Hardware restrictions on maximum container size are almost absent.
+Maximum number of pages for root directory, as we can see, is 0x49. Root directory can hold lots of streams with big content length. Also, page size can be as big as we wish (and 32 bits can hold).
+In practice, the particular implementation of PDB library can add its own restrictions on maximum page size, peak page count or maximum container length, etc..
+So, MSF containers can hold lots of data.
+
 = Root directory =
 Root directory contains array of stream descriptors. Root directory is followed by free page map (complete layout is unknown, ignored).
 First DWORD of root directory is the number of streams. Number of streams is followed by array of stream sizes (in pages; number of elements == stream count).
