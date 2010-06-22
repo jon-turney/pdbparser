@@ -1,0 +1,15 @@
+#summary Basic architecture of the parsing library and descrpition of supplied interfaces.
+#labels Phase-Design
+
+= Executables =
+
+Sources contain symeng.dll, core engine of parsing library, and sample demo program that uses this library, pdbparser.exe.
+symeng.dll consists of several modules: 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
