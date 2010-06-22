@@ -1,5 +1,5 @@
 #summary File layout and format description of Multi-Stream Files (MSF; enclosing format for PDB debug symbols)
-#labels Phase-Implementation,Phase-Design
+#labels Phase-Implementation,Phase-Design,File-Format
 
 = Main principles =
 
