@@ -4,7 +4,7 @@
 = Main principles =
 
 MSF file consists of a set of streams. Each stream has the following properties:
-  * ID (integer, 0-based. for example, Stream#0 always contains PDB headers)
+  * ID (integer, 0-based. for example, Stream #1 always contains PDB headers)
   * Content (data pointer + length (`= NumberOfPages * MSF->PageSize`))
   * Array of page numbers
   * Number of pages
