@@ -56,8 +56,7 @@ struct NewDBIHdr {
 Sample algorythm for dumping all symbols with their types follows:
   # Read DBI stream
   # Parse DBI header : retrieve GSI/PSI stream numbers, retrieve Sym stream number (unsorted list of all referenced symbol records).
-  # Remember pointers to GSI/PSI/Sym. (GSI can be simply enumerated, PSI supports hash-based search (AFAIR), Sym can be used for easy searching symbol by address. 
-Also, PDB has an additional hash lookup table for fast symbol-by-address search).
+  # Remember pointers to GSI/PSI/Sym. (GSI can be simply enumerated, PSI supports hash-based search (AFAIR), Sym can be used for easy searching symbol by address. Also, PDB has an additional hash lookup table for fast symbol-by-address search).
   # Load TPI
   # Enumerate all Sym records
   #
