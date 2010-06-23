@@ -83,5 +83,5 @@ When you have PSYM pointer, note, that this pointer may refer to one of tens sym
   * *S_PUB32* (PUBSYM32) : public symbol, 32-bit offset (for example, `void _stdcall Testfunc1(int, void (*)());`)
   * *S_CONSTANT* (CONSTSYM) : constant (16-bit value) (for example, `enum IVTYPE::IT_TYPE1 = 5`)
   * *S_UDT* (UDTSYM) : (??)
-  * *S_LPROCREF*,*S_PROCREF* : local/global reference to a procedure (module:address, 16 bits for module index, 32 bits for address within module) (for example, `_WinMain@16 = 0001:000012c8`)
-  * *S_LDATA32*,*S_GDATA32* : local/global 32-bit data (type index; offset/address) (for example, `
+  * *S_LPROCREF*,*S_PROCREF* (REFSYM2) : local/global reference to a procedure (module:offset, 16 bits for module index, 32 bits for in-module-offset) (for example, `_WinMain@16 = 0001:000012c8`)
+  * *S_LDATA32*,*S_GDATA32* (DATASYM32) : local/global data (additonal properties: type index; 32-bit address) (for example, `char szMessageFormat[12] = "Hello, %s !"`)
