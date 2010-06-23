@@ -80,8 +80,8 @@ When you have PSYM pointer, note, that this pointer may refer to one of tens sym
 == Symbol types ==
 (only supported types are documented)
 
-  * *S_PUB32* (PUBSYM32) : public symbol, 32-bit offset (for example, `void _stdcall Testfunc1(int, void (*)());`)
-  * *S_CONSTANT* (CONSTSYM) : constant (16-bit value) (for example, `enum IVTYPE::IT_TYPE1 = 5`)
+  * *S_PUB32* (PUBSYM32) : public symbol, 32-bit offset; options: flags(code/function/managed/MSIL) (for example, `public function _WinMain@16 = 0002:00001FD0`)
+  * *S_CONSTANT* (CONSTSYM) : constant (for example, `enum IVTYPE::IT_TYPE1 = 5`) NB: win_pdbx has an error in the header file where CONSTSYM is declared. Instead of 'stretching' value from 16- to 32-bit, author stretched type index to 32 bits:) Of course, definition of first two fields of CONSTSYM should look like this: `WORD typind; DWORD value; BYTE name [];`
   * *S_UDT* (UDTSYM) : User-Defined Type (via *typedef*); what was the reason for inclusion of typedef in the list of SYMBOL TYPES?! It should be in TPI list instead. (Yes, it's duplicated in TPI as a type).
-  * *S_LPROCREF*,*S_PROCREF* (REFSYM2) : local/global reference to a procedure (module:offset, 16 bits for module index, 32 bits for in-module-offset) (for example, `_WinMain@16 = 0001:000012c8`)
+  * *S_LPROCREF*,*S_PROCREF* (REFSYM2) : local/global reference to a procedure; options: module:symbol, 16 bits for module index, 32 bits for symrec-offset) (for example, `WinMain = 0002:000003e0`)
   * *S_LDATA32*,*S_GDATA32* (DATASYM32) : local/global data (additonal properties: type index; 32-bit address) (for example, `char szMessageFormat[12] = "Hello, %s !"`)
