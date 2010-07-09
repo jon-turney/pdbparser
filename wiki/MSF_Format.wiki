@@ -19,6 +19,7 @@ MSF header (see MSF_HDR in symeng\msf.cpp) has the following layout:
 || 0x2c (44) || DWORD || Root directory size, in bytes ||
 || 0x30 (48) || DWORD || reserved (not used, ignored) ||
 || 0x34 (52) || array of 0x49 (73) DWORD's || Root directory pointers (page numbers containing root directory) ||
+
 Total length: 0x158 (344) bytes.
 
 = Maximum size of MSF container =
