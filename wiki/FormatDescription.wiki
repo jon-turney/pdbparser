@@ -21,7 +21,7 @@ PDB stream contains GUID signature and PDB age for identification it in a symbol
 == TPI stream ==
 Contains Type Information (array of type descriptors). It includes type of function or method arguments, their return values, global structures, prototypes or classes, etc..
 Also, type of structure field is also included in TPI. So, each structure includes one entry per the structure itself and one optional entry per field for describing it's field.
-There is a predefined type list (int,char,unsigned,void*,... - all integer,real and other types, pointers to it, double-pointers to it (`type**`), etc..
+There is a predefined type list (`int,char,unsigned,void*,...` - all integer,real and other types, pointers to it, double-pointers to it (`type**`), etc..
 List of predefined types can be found here: ListOfPredefinedTypes.
 
 TPI info is a list of descriptors of compex types used in the image. It could be structure, pointer to a (for instance, `struct _KAPC *`), union, etc..
