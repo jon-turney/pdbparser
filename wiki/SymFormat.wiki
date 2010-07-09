@@ -13,7 +13,7 @@ GSI stream contains GSI header followed by symbol records for all globals (globa
 == Symbol Record ==
 Symbol record format is the same for all three streams and is described in SymRecordFormat.
 
-= Private Symbol Information =
+= Public Symbol Information =
 ??
 
 = Implementation =
