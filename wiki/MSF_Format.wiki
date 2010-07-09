@@ -38,12 +38,12 @@ Number of streams in outer array == stream count.
 = Stream types =
 || *Stream#*   || *Description* ||
 || 0         || Root directory (copy) ||
-|| 1         || PDB headers (see PdbHeadersFormat) ||
-|| 2         || TPI (type info) (see TPIFormat) ||
-|| 3         || DBI (debug info) (see DBIHeaderFormat) ||
-|| 5         || FPO (frame pointers omission info) (see FPOEntriesFormat) ||
-|| variable  || GSI (global symbol information) (see GSIPSIFormat) ||
-|| variable  || PSI (private symbol information) (see GSIPSIFormat) ||
+|| 1         || PDB headers (see [PdbHeadersFormat]) ||
+|| 2         || TPI (type info) (see [TPIFormat]) ||
+|| 3         || DBI (debug info) (see [DBIHeaderFormat]) ||
+|| 5         || FPO (frame pointers omission info) (see [FPOEntriesFormat]) ||
+|| variable  || GSI (global symbol information) (see [GSIPSIFormat]) ||
+|| variable  || PSI (private symbol information) (see [GSIPSIFormat]) ||
 
 = Misc =
 Calculate number of pages spanned by size-length bytes: `#define STREAM_SPAN_PAGES(msf,size) (ALIGN_UP(size,msf->hdr->dwPageSize)/msf->hdr->dwPageSize)`
