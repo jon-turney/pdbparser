@@ -21,8 +21,8 @@ Symbol store base is B:\Symbols
 Signature is 16B8ACEDB77D4682A3C71E78E31A8115
 PDB age is 2 (note: without leading zeroes, although age is a DWORD)
 
-See also: PdbGetImageSignatureAndPath (retrieves PDB file path and signature-age string)
-SymDownloadFromServerPdb (downloads PDB from symbol server and saves in local symbol store; arguments: PDB signature (string), symbol server URL, local symbol store path)
+See also: `PdbGetImageSignatureAndPath` (retrieves PDB file path and signature-age string)
+`SymDownloadFromServerPdb` (downloads PDB from symbol server and saves in local symbol store; arguments: PDB signature (string), symbol server URL, local symbol store path)
 
 Sample HTTP request sent to symbol server:
 
@@ -36,5 +36,5 @@ Cookie: A=I&I=AxUFAAAAAAA/BwAAiyuzHeFC9Wr/2d6GgxRHGg!!&M=1; MC1=GUID=9cd0ed4ebbb
 }}}
 
 = Symbol server FS layout =
-`http://symbol.server/filename.pdb/SIGNATUREAGE/filename.pdb` or filename.pd_ (compressed).
+`http://symbol.server/filename.pdb/SIGNATUREAGE/filename.pdb` or `filename.pd_` (compressed).
 SIGNATUREAGE part is the same as the corresponding part of PDB path from local symbol store.
