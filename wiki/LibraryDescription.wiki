@@ -5,7 +5,7 @@
 
 Sources contain symeng.dll, core engine of parsing library, and sample demo program that uses this library, pdbparser.exe.
 symeng.dll consists of several modules: 
-  * 'MSF' : contains internal MSF parsing routines. Interface: open MSF (by FileName), close MSF, read stream, get stream info, get file info.
+  * 'MSF' : contains internal MSF parsing routines. Interface: open MSF (by !FileName), close MSF, read stream, get stream info, get file info.
   * 'PDB' : contains interface PDB headers parsing routines. Interface: open PDB for MSF, close PDB, find symbol by address/name, enumerate symbols, enumerate types, find PDB for image file, download PDB for image file.
   * 'DBI' : contains internal DBI parsing routines. Interface: open DBI for PDB, close DBI, load symbols, get GSI/PSI, get TPI.
   * 'SYM' : contains generic internal symbol parsing routines (core of GSI/PSI modules). Interface: open symbols for DBI, close symbols, find symbol, enumerate symbols, load symbols from symbol server, find symbols in local symbol cache.
