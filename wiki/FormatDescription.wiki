@@ -5,10 +5,10 @@
 
 The outer format of PDB file is a MSF (Multi-Stream File, see MSF_Format). 
 Data is contained in so called 'streams' (numbered data streams).
-Also, MSF container is divided in 'pages' (blocks of fixed size, page size resides in MSF header). Size of MSF container is always a multiple of PageSize (and equals `PageSize * PageCount`).
+Also, MSF container is divided in 'pages' (blocks of fixed size, page size resides in MSF header). Size of MSF container is always a multiple of !PageSize (and equals `PageSize * PageCount`).
 First page contains MSF file header (see MSF_Format for detailed description), followed by *Root Directory* (array of stream descriptors; defines where the particular stream exists within the MSF). Root Directory contains number of streams, stream page counts and stream pointers (list of page numbers occupied by the stream).
 Root Directory is usually followed by stream data. Stream pages can be placed randomly (e.g. Stream #0 can consist of Pages# 1,4-9,15, but Stream #1 can consist of Pages# 2-3,10-14, for example).
-When parsing MSF container and reading stream content, parser enumerates all page numbers in StreamPointers and for each page# reads stream pages and places them in the proper order.
+When parsing MSF container and reading stream content, parser enumerates all page numbers in !StreamPointers and for each page# reads stream pages and places them in the proper order.
 'cause stream may be fragmented, MSF container can't be simply mapped for manipulating pointers within this mapped view.
 For reading stream contents, memory block of stream size should be allocated and there pages have to be read one by one and consequently written in this block.
 Pointer to the beginning of the block is returned as 'stream data pointer' (of course, should be freed when is not yet necessary).
