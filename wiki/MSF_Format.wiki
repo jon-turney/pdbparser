@@ -12,13 +12,13 @@ MSF file consists of a set of streams. Each stream has the following properties:
 = MSF header =
 MSF header (see MSF_HDR in symeng\msf.cpp) has the following layout:
 || *Offset* || *Size* || *Comment* ||
-|| 0x00 || 32 || Signature `#define MSF_SIGNATURE_700 "Microsoft C/C++ MSF 7.00\r\n\032DS\0\0"` ||
-|| 0x20 || DWORD || `PageSize`, in bytes. File size is always a multiple of page size ||
-|| 0x24 || DWORD || FPM Page# (Free Page Map). Destiny: unknown (field ignored) ||
-|| 0x28 || DWORD || Page Count. File size always equals `PageSize*PageCount` ||
-|| 0x2c || DWORD || Root directory size, in bytes ||
-|| 0x30 || DWORD || reserved (not used, ignored) ||
-|| 0x34 || DWORD[0x49] || Root directory pointers (page numbers containing root directory) ||
+|| 0x00 (0) || 32 || Signature `#define MSF_SIGNATURE_700 "Microsoft C/C++ MSF 7.00\r\n\032DS\0\0"` ||
+|| 0x20 (32) || DWORD || `PageSize`, in bytes. File size is always a multiple of page size ||
+|| 0x24 (36) || DWORD || FPM Page# (Free Page Map). Destiny: unknown (field ignored) ||
+|| 0x28 (40) || DWORD || Page Count. File size always equals `PageSize*PageCount` ||
+|| 0x2c (44) || DWORD || Root directory size, in bytes ||
+|| 0x30 (48) || DWORD || reserved (not used, ignored) ||
+|| 0x34 (52) || array of 0x49 (73) ( DWORD's || Root directory pointers (page numbers containing root directory) ||
 Total length: 0x158 (344) bytes.
 
 = Maximum size of MSF container =
