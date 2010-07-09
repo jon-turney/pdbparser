@@ -11,8 +11,11 @@ MSF file consists of a set of streams. Each stream has the following properties:
 
 = MSF header =
 MSF header (see MSF_HDR in symeng\msf.cpp) has the following layout:
+|| *Offset* || *Size* || *Comment* ||
+|| 0x00 || 32 || Signature ||
+
   * Offset 0x00, Size 32 bytes : Signature `#define MSF_SIGNATURE_700 "Microsoft C/C++ MSF 7.00\r\n\032DS\0\0"`
-  * Offset 0x20, Size DWORD : PageSize, in bytes. File size is always a multiple of page size.
+  * Offset 0x20, Size DWORD : `PageSize`, in bytes. File size is always a multiple of page size.
   * Offset 0x24, Size DWORD : FPM Page# (Free Page Map). Destiny: unknown (field ignored).
   * Offset 0x28, Size DWORD : Page count. File size always equals `PageSize*PageCount`
   * Offset 0x2c, Size DWORD : Root directory size, in bytes.
@@ -33,16 +36,14 @@ Stream size array is followed by array of stream pointers (list of page numbers 
 Number of streams in outer array == stream count.
 
 = Stream types =
-{{{
-Stream#   Description
-0         Root directory (copy)
-1         PDB headers (see PdbHeadersFormat)
-2         TPI (type info) (see TPIFormat)
-3         DBI (debug info) (see DBIHeaderFormat)
-5         FPO (frame pointers omission info) (see FPOEntriesFormat)
-variable  GSI (global symbol information) (see GSIPSIFormat)
-variable  PSI (private symbol information) (see GSIPSIFormat)
-}}}
+|| *Stream#*   || *Description* ||
+|| 0         || Root directory (copy) ||
+|| 1         || PDB headers (see PdbHeadersFormat) ||
+|| 2         || TPI (type info) (see TPIFormat) ||
+|| 3         || DBI (debug info) (see DBIHeaderFormat) ||
+|| 5         || FPO (frame pointers omission info) (see FPOEntriesFormat) ||
+|| variable  || GSI (global symbol information) (see GSIPSIFormat) ||
+|| variable  || PSI (private symbol information) (see GSIPSIFormat) ||
 
 = Misc =
 Calculate number of pages spanned by size-length bytes: `#define STREAM_SPAN_PAGES(msf,size) (ALIGN_UP(size,msf->hdr->dwPageSize)/msf->hdr->dwPageSize)`
