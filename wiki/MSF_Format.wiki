@@ -37,7 +37,7 @@ Number of streams in outer array == stream count.
 = Stream types =
 || *Stream#*   || *Description* ||
 || 0         || Root directory (copy) ||
-|| 1         || PDB headers (see [PdbHeadersFormat]) ||
+|| 1         || PDB headers (see [PDBHeadersFormat]) ||
 || 2         || TPI (type info) (see [TPIFormat]) ||
 || 3         || DBI (debug info) (see [DBIHeaderFormat]) ||
 || 5         || FPO (frame pointers omission info) (see [FPOEntriesFormat]) ||
